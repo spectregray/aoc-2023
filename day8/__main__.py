@@ -4,20 +4,6 @@ def main():
     part1()
     part2()
 
-class Hand:
-    def __init__(self, cards, bid, card_type):
-        self.cards = cards
-        self.bid = bid
-        self.card_type = card_type
-
-    def __lt__(self, other):
-        if self.card_type == other.card_type:
-            for card, other_card in zip(self.cards, other.cards):
-                if card != other_card:
-                    return card < other_card
-            return True
-        return self.card_type < other.card_type
-
 def part1():
     directions = None
     network = {}
