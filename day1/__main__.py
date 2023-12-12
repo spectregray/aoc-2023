@@ -45,10 +45,9 @@ def part2():
                 else:
                     for text in text_to_int:
                         end = i + len(text)
-                        if end <= len(line):
-                            if line[i:end] == text:
-                                numbers.append(text_to_int[text])
-                                break
+                        if end <= len(line) and line[i:end] == text:
+                            numbers.append(text_to_int[text])
+                            break
             sum += 10 * numbers[0] + numbers[-1]
 
     print("Part 2:", sum)
