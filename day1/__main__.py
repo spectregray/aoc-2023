@@ -21,7 +21,7 @@ def part1():
 
 def part2():
     sum = 0
-    text_to_int = {
+    words = {
         "one": 1,
         "two": 2,
         "three": 3,
@@ -43,10 +43,10 @@ def part2():
                 if character.isdigit():
                     numbers.append(int(character))
                 else:
-                    for text in text_to_int:
-                        end = i + len(text)
-                        if end <= len(line) and line[i:end] == text:
-                            numbers.append(text_to_int[text])
+                    for word in words:
+                        end = i + len(word)
+                        if end <= len(line) and line[i:end] == word:
+                            numbers.append(words[word])
                             break
             sum += 10 * numbers[0] + numbers[-1]
 
